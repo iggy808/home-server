@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@theme {
+    --color-sidebar: #244022;
+    --color-main: #A8B895;
+    --font-abhaya: "Abhaya Libre";
+}
