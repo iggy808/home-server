@@ -19,7 +19,7 @@ export const load: PageServerLoad = async () => {
         options: {
             maintainAspectRatio: false
         }
-    };;
+    };
     
     return {
         title: "Finances",

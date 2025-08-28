@@ -4,5 +4,9 @@
 @theme {
     --color-sidebar: #244022;
     --color-main: #A8B895;
+    --color-section: #B7C0AD;
+    --color-interactive: #D9D9D9;
+    --color-table-header: #89967A;
+    --color-table-body: #9EAD8D;
     --font-abhaya: "Abhaya Libre";
 }
