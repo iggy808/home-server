@@ -2,7 +2,7 @@ import type { ChartConfiguration } from 'chart.js';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
-    const data = {
+    let data = {
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
         datasets: [{
             label: 'My First Dataset',
@@ -10,12 +10,15 @@ export const load: PageServerLoad = async () => {
             fill: false,
             borderColor: 'rgb(75, 192, 192)',
             tension: 0.1
-        }]
+        }],
     };
-    
+
     let financeChart : ChartConfiguration = {
         type: 'line',
-        data: data
+        data: data,
+        options: {
+            maintainAspectRatio: false
+        }
     };;
     
     return {
