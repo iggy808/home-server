@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { chartRender } from "$lib/helpers/chart-helpers.js";
+    import { chartRender } from "$lib/client/helpers/chart-helpers.js";
     let { data } = $props();
 </script>
 
