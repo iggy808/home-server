@@ -1,7 +1,10 @@
 import type { ChartConfiguration } from 'chart.js';
 import type { PageServerLoad } from './$types';
+import { readLedgerItems } from '$lib/server/modules/finances/readLedgerItems';
 
 export const load: PageServerLoad = async () => {
+    let ledgerTableData = await readLedgerItems();
+
     let data = {
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
         datasets: [{
@@ -23,6 +26,7 @@ export const load: PageServerLoad = async () => {
     
     return {
         title: "Finances",
-        financeChart: financeChart
+        financeChart: financeChart,
+        ledgerTableData: ledgerTableData
     };
 };

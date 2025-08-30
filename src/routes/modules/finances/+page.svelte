@@ -1,6 +1,7 @@
 <script lang="ts">
     import { chartRender } from "$lib/client/helpers/chart-helpers.js";
     let { data } = $props();
+    console.log(data.ledgerTableData);
 </script>
 
 <div id="module-title-container">
@@ -130,10 +131,11 @@
                     </tr>
                 </thead>
                 <tbody class="bg-table-body">
+                    {#each data.ledgerTableData as ledgerItem}
                     <tr>
-                        <td class="text-left border p-1">Scheduled Deposit</td>
-                        <td class="text-left border p-1">28-08-2025</td>
-                        <td class="text-left border p-1">$100</td>
+                        <td class="text-left border p-1">{ ledgerItem.description }</td>
+                        <td class="text-left border p-1">{ ledgerItem.createdAt }</td>
+                        <td class="text-left border p-1">{ ledgerItem.amount }</td>
                         <td class="border p-1">
                             <div class="grid grid-cols-2 grid-rows-1">
                                 <button type="button" class="bg-interactive mx-8 rounded-xl">
@@ -145,66 +147,7 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="text-left border p-1">Scheduled Deposit</td>
-                        <td class="text-left border p-1">27-08-2025</td>
-                        <td class="text-left border p-1">$100</td>
-                        <td class="border p-1">
-                            <div class="grid grid-cols-2 grid-rows-1">
-                                <button type="button" class="bg-interactive mx-8 rounded-xl">
-                                    <span class="text-m">Edit</span>
-                                </button>
-                                <button type="button" class="bg-interactive mx-8 rounded-xl">
-                                    <span class="text-m">Delete</span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-left border p-1">Scheduled Deposit</td>
-                        <td class="text-left border p-1">26-08-2025</td>
-                        <td class="text-left border p-1">$100</td>
-                        <td class="border p-1">
-                            <div class="grid grid-cols-2 grid-rows-1">
-                                <button type="button" class="bg-interactive mx-8 rounded-xl">
-                                    <span class="text-m">Edit</span>
-                                </button>
-                                <button type="button" class="bg-interactive mx-8 rounded-xl">
-                                    <span class="text-m">Delete</span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-left border p-1">Scheduled Deposit</td>
-                        <td class="text-left border p-1">25-08-2025</td>
-                        <td class="text-left border p-1">$100</td>
-                        <td class="border p-1">
-                            <div class="grid grid-cols-2 grid-rows-1">
-                                <button type="button" class="bg-interactive mx-8 rounded-xl">
-                                    <span class="text-m">Edit</span>
-                                </button>
-                                <button type="button" class="bg-interactive mx-8 rounded-xl">
-                                    <span class="text-m">Delete</span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-left border p-1">Scheduled Deposit</td>
-                        <td class="text-left border p-1">25-08-2025</td>
-                        <td class="text-left border p-1">$100</td>
-                        <td class="border p-1">
-                            <div class="grid grid-cols-2 grid-rows-1">
-                                <button type="button" class="bg-interactive mx-8 rounded-xl">
-                                    <span class="text-m">Edit</span>
-                                </button>
-                                <button type="button" class="bg-interactive mx-8 rounded-xl">
-                                    <span class="text-m">Delete</span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
+                    {/each}
                 </tbody>
             </table>
         </div>
