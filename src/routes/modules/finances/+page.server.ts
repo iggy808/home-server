@@ -5,7 +5,7 @@ import { readLedgerItems } from '$lib/server/modules/finances/readLedgerItems';
 export const load: PageServerLoad = async () => {
     let ledgerTableData = await readLedgerItems();
 
-    let data = {
+    let financeChartData = {
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
         datasets: [{
             label: 'My First Dataset',
@@ -18,7 +18,7 @@ export const load: PageServerLoad = async () => {
 
     let financeChart : ChartConfiguration = {
         type: 'line',
-        data: data,
+        data: financeChartData,
         options: {
             maintainAspectRatio: false
         }

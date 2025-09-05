@@ -124,8 +124,9 @@
             <table class="table-fixed w-full h-full border">
                 <thead class="bg-table-header">
                     <tr>
-                        <th class="text-left border p-1">Description</th>
                         <th class="text-left border p-1">Date</th>
+                        <th class="text-left border p-1">Type</th>
+                        <th class="text-left border p-1">Description</th>
                         <th class="text-left border p-1">Amount</th>
                         <th class="text-left border p-1">Actions</th>
                     </tr>
@@ -133,8 +134,9 @@
                 <tbody class="bg-table-body">
                     {#each data.ledgerTableData as ledgerItem}
                     <tr>
-                        <td class="text-left border p-1">{ ledgerItem.description }</td>
                         <td class="text-left border p-1">{ ledgerItem.createdAt }</td>
+                        <td class="text-left border p-1">{ ledgerItem.ledgerTypeName }</td>
+                        <td class="text-left border p-1">{ ledgerItem.description }</td>
                         <td class="text-left border p-1">{ ledgerItem.amount }</td>
                         <td class="border p-1">
                             <div class="grid grid-cols-2 grid-rows-1">
