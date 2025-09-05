@@ -20,7 +20,7 @@ async function main() {
 };
 
 async function seedFinanceLedgerTypes() {
-    let existingTypes = await db.select().from(financeLedgerCategory);
+    let existingTypes = await db.select().from(financeLedgerTypes);
     if (existingTypes.length > 0) {
         return existingTypes;
     }
@@ -43,7 +43,7 @@ async function seedFinanceLedgerTypes() {
     ]
 
     return await db
-        .insert(financeLedgerCategory)
+        .insert(financeLedgerTypes)
         .values(financeLedgerTypeRecords)
         .returning();
 };

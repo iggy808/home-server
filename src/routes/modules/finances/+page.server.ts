@@ -3,8 +3,17 @@ import type { PageServerLoad } from './$types';
 import { readLedgerItems } from '$lib/server/modules/finances/readLedgerItems';
 
 export const load: PageServerLoad = async () => {
+    let financeChart = await getFinanceChart();
     let ledgerTableData = await readLedgerItems();
 
+    return {
+        title: "Finances",
+        financeChart: financeChart,
+        ledgerTableData: ledgerTableData
+    };
+};
+
+async function getFinanceChart() {
     let financeChartData = {
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
         datasets: [{
@@ -23,10 +32,6 @@ export const load: PageServerLoad = async () => {
             maintainAspectRatio: false
         }
     };
-    
-    return {
-        title: "Finances",
-        financeChart: financeChart,
-        ledgerTableData: ledgerTableData
-    };
-};
+
+    return financeChart;
+}
